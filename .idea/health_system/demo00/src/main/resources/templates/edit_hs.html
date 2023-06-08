@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Система здравоохранения | Редактирование записи</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT95WrHftjDdrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<style>
+    body {
+        background-color: #faedd3;
+    }
+</style>
+    <blockquote class="blockquote text-center">
+        <h1 style="text-align:center">Редактирование записи</h1>
+    </blockquote>
+    <h2 class="row">
+        <div class="col-md-8 offset-md-4">
+            <form action="#" th:action="@{/save}" th:object="${Hs}" method="post">
+                <table>
+                    <tr>
+                        <td>Номер:</td>
+                        <td><label>
+                            <input type="text" th:field="*{id}" readonly="readonly" >
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Тип учреждения:</td>
+                        <td><label>
+                            <input type="text" th:field="*{type}" >
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Местоположение:</td>
+                        <td><label>
+                            <input type="text" th:field="*{location}" >
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Объем финансирования:</td>
+                        <td><label>
+                            <input type="text" th:field="*{funding}">
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Регистраций:</td>
+                        <td><label>
+                            <input type="text" th:field="*{residents_registered}">
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Посещений за месяц:</td>
+                        <td><label>
+                            <input type="text" th:field="*{residents_per_month}">
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>Средняя оценка:</td>
+                        <td><label>
+                            <input type="text" th:field="*{average_score}">
+                        </label></td>
+                    </tr>
+                        <td colspan="2">
+                            <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Отправить
+                            </button>
+                        </td>
+                </table>
+            </form>
+        </div>
+    </h2>
+</body>
+</html>
+
+
+
